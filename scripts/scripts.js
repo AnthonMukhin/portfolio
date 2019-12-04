@@ -145,3 +145,13 @@ container.addEventListener('touchstart', (event) => {
     element.innerHTML = element.innerHTML === 'Show description' ? 'Hide description' : 'Show description';
   }
 });
+
+container.addEventListener('click', (event) => {
+  const element = event.target
+  const isTargetElement = element.classList.contains('project__button');
+  if (isTargetElement) {
+    const description = element.parentNode.querySelector('.project__description');
+    description.classList.toggle('project__description--show');
+    element.innerHTML = element.innerHTML === 'Show description' ? 'Hide description' : 'Show description';
+  }
+});

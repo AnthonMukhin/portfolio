@@ -304,10 +304,21 @@ body {
   }
 }
 
-@media (max-width: 960px) {
-  .description {
-    flex-direction: column;
-    align-items: center;
+@media (max-width: 800px) {
+  .carousel__list {
+    margin: 0 80px;
+  }
+
+  .control {
+    width: 80px;
+  } 
+  
+  .arrow {
+    width: 40px;
+  }
+
+  .project__name {
+    font-size: 20px;
   }
 }
 
@@ -345,6 +356,10 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     padding: 0 5%;
+  }
+
+  .project__name {
+    font-size: 24px;
   }
 
   .project__description {

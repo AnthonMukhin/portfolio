@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <title>Portfolio</title>
+</head>
+<body>
+  <main class="main">
+    <div class="user">
+      <div class="user__avatar">
+        <img src="./assets/images/user.png" alt="user" class="user__image">
+      </div>
+      <div class="user__info">
+        <p class="user__name">Mukhin Anton</p>
+        <a class="user__github" href="https://github.com/anton-rsschool">Github</a>
+        <div class="social">
+          <ul class="social__list">
+            <li class="social__item">
+              <a class="social__link" target="_blank" href="https://www.linkedin.com/in/anton-mukhin-267238b4/">Linkedin</a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" target="_blank" href="https://vk.com/id145311945">Vk</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="education">
+      <div id="education-control" class="education__control">
+        <p class="education__title">Education</p>
+        <div id="icon" class="education__icon"></div>
+      </div>
+      
+      <ul class="education__list">
+        <li class="education__item">
+          <p class="education__institution">
+            BSTU
+          </p>
+          <p class="education__date">
+            2003-2008
+          </p>
+        </li>
+        <li class="education__item">
+          <p class="education__institution">
+            RSSchool Courses
+          </p>
+          <p class="education__date">
+            2019-2020
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="carousel" id="carousel">
+      <div class="carousel__list" id="item-list">
+        <div class="carousel__item carousel__item--active">
+          <article class="project">
+              <button class="project__button">Show description</button>
+            <div class="project__description">
+              <h2 class="project__name">Theyalow</h2>
+              <ul>
+                <li class="project__item">Responsive</li>
+                <li class="project__item">Svg</li>
+              </ul>
+            </div>
+            <a class="project__link" href="./theyalow.html">
+              <img class="project__image" src="./assets/images/theyalow.jpg" alt="project">
+            </a>
+          </article>
+        </div>
+        <div class="carousel__item">
+          <article class="project">
+            <button class="project__button">Show description</button>
+            <div class="project__description">
+              <h2 class="project__name">Repair design project</h2>
+              <ul>
+                <li class="project__item">Adaptive</li>
+                <li class="project__item">Svg</li>
+              </ul>
+            </div>
+            <a class="project__link" href="./repair-design-project.html">
+              <img class="project__image" src="./assets/images/repair-design-project.jpg" alt="project">
+            </a>
+          </article>
+        </div>
+      </div>
+      <div class="control control--left" id="control-left">
+        <img class="arrow" src="./assets/images/arrow-left.svg" alt="arrow-left">
+      </div>
+      <div class="control control--right" id="control-right">
+        <img class="arrow arrow--right" src="./assets/images/arrow-right.svg" alt="arrow-left">
+      </div>
+    </div>
+  </main>
+  
+  <script src="./scripts/scripts.js"></script>
+</body>
+</html>

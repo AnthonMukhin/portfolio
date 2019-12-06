@@ -90,7 +90,7 @@ const swipedetect = (element) => {
     startX = touchobj ? touchobj[0].pageX : event.pageX;
 		startY = touchobj ? touchobj[0].pageY : event.pageY;
 		startTime = new Date().getTime();
-		event.preventDefault();
+		// event.preventDefault();
   };
 
   const endSwap = (event) => {

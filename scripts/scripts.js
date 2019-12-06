@@ -120,11 +120,18 @@ const swipedetect = (element) => {
   });
 
 	surface.addEventListener('touchstart', startSwap, false);
-	surface.addEventListener('touchmove', function(e){
-			e.preventDefault();
-	}, false);
 	surface.addEventListener('touchend', endSwap, false);
 }
+
+const toggleDescription = (event) => {
+	const element = event.target
+  const isTargetElement = element.classList.contains('project__button');
+  if (isTargetElement) {
+    const description = element.parentNode.querySelector('.project__description');
+    description.classList.toggle('project__description--show');
+    element.innerHTML = element.innerHTML === 'Show description' ? 'Hide description' : 'Show description';
+  }
+};
 
 swipedetect(container);
 
@@ -136,22 +143,6 @@ educationControl.addEventListener('click', () => {
   icon.classList.toggle('education__icon--rotate');
 });
 
-container.addEventListener('touchstart', (event) => {
-  const element = event.target
-  const isTargetElement = element.classList.contains('project__button');
-  if (isTargetElement) {
-    const description = element.parentNode.querySelector('.project__description');
-    description.classList.toggle('project__description--show');
-    element.innerHTML = element.innerHTML === 'Show description' ? 'Hide description' : 'Show description';
-  }
-});
+container.addEventListener('touchstart', toggleDescription);
 
-container.addEventListener('click', (event) => {
-  const element = event.target
-  const isTargetElement = element.classList.contains('project__button');
-  if (isTargetElement) {
-    const description = element.parentNode.querySelector('.project__description');
-    description.classList.toggle('project__description--show');
-    element.innerHTML = element.innerHTML === 'Show description' ? 'Hide description' : 'Show description';
-  }
-});
+container.addEventListener('click', toggleDescription);

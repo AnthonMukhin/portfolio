@@ -85,7 +85,7 @@ const swipedetect = (element) => {
   };
 
   const scroll = (distY, elapsedTime) => {
-  	const isScroll = Math.abs(distY) > 200 && elapsedTime <= allowedTime;
+  	const isScroll = Math.abs(distY) > 150 && elapsedTime <= 500;
   	if (isScroll) {
   		window.scroll(0, distY);
   	}

@@ -84,13 +84,20 @@ const swipedetect = (element) => {
     }
   };
 
+  const scroll = (distY, elapsedTime) => {
+  	const isScroll = Math.abs(distY) > 200 && elapsedTime <= allowedTime;
+  	if (isScroll) {
+  		window.scroll(0, distY);
+  	}
+  }
+
   const startSwap = (event) => {
     const touchobj = event.changedTouches;
     target = event.target;
     startX = touchobj ? touchobj[0].pageX : event.pageX;
 		startY = touchobj ? touchobj[0].pageY : event.pageY;
 		startTime = new Date().getTime();
-		// event.preventDefault();
+		event.preventDefault();
   };
 
   const endSwap = (event) => {
@@ -109,8 +116,10 @@ const swipedetect = (element) => {
 		} else if (isClick) {
       const { href } = target.parentNode;
       document.location.href = href;
+    } else {
+    	scroll(distY, elapsedTime);
     }
-		event.preventDefault();
+    event.preventDefault();
   };
 
 	surface.addEventListener('mousedown', startSwap, false);
@@ -121,6 +130,7 @@ const swipedetect = (element) => {
 
 	surface.addEventListener('touchstart', startSwap, false);
 	surface.addEventListener('touchend', endSwap, false);
+
 }
 
 const toggleDescription = (event) => {
@@ -144,5 +154,4 @@ educationControl.addEventListener('click', () => {
 });
 
 container.addEventListener('touchstart', toggleDescription);
-
 container.addEventListener('click', toggleDescription);
